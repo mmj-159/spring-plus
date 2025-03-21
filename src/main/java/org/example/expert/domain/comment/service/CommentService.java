@@ -48,6 +48,7 @@ public class CommentService {
     }
 
     public List<CommentResponse> getComments(long todoId) {
+        //2-7 N+1
         List<Comment> commentList = commentRepository.findByTodoIdWithUser(todoId);
 
         List<CommentResponse> dtoList = new ArrayList<>();

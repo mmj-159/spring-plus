@@ -28,6 +28,7 @@ public class CommentController {
         return ResponseEntity.ok(commentService.saveComment(authUser, todoId, commentSaveRequest));
     }
 
+    //2-7 N+1
     @GetMapping("/todos/{todoId}/comments")
     public ResponseEntity<List<CommentResponse>> getComments(@PathVariable long todoId) {
         return ResponseEntity.ok(commentService.getComments(todoId));
