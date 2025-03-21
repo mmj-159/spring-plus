@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
 
+//2-9 Spring Security
 @Configuration
 @RequiredArgsConstructor
 @EnableWebSecurity
@@ -43,6 +44,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(request -> request.getRequestURI().startsWith("/auth")).permitAll()
                         .requestMatchers("/test").hasAuthority(UserRole.Authority.ADMIN)
+                        .requestMatchers(request -> request.getRequestURI().startsWith("/admin")).hasAuthority(UserRole.Authority.ADMIN)
                         .requestMatchers("/open").permitAll()
                         .anyRequest().authenticated()
                 )

@@ -3,6 +3,7 @@ package org.example.expert.config;
 import org.example.expert.domain.common.dto.AuthUser;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 
+//2-9 Spring Security
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
 
     private final AuthUser authUser;
