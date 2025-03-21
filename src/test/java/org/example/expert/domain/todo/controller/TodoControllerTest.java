@@ -35,7 +35,7 @@ class TodoControllerTest {
         // given
         long todoId = 1L;
         String title = "title";
-        AuthUser authUser = new AuthUser(1L, "email", UserRole.USER, "kimchiman");
+        AuthUser authUser = new AuthUser(1L, "email", UserRole.ROLE_USER, "kimchiman");
         User user = User.fromAuthUser(authUser);
         UserResponse userResponse = new UserResponse(user.getId(), user.getEmail(), user.getNickName());
         TodoResponse response = new TodoResponse(
@@ -68,6 +68,7 @@ class TodoControllerTest {
                 .thenThrow(new InvalidRequestException("Todo not found"));
 
         // then
+        //1-4 controller test
         mockMvc.perform(get("/todos/{todoId}", todoId))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.status").value(HttpStatus.BAD_REQUEST.name()))
