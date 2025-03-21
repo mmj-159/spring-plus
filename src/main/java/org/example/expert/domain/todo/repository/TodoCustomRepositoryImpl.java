@@ -12,7 +12,7 @@ import static org.example.expert.domain.todo.entity.QTodo.todo;
 public class TodoCustomRepositoryImpl implements TodoCustomRepository{
 
     private final JPAQueryFactory jpaQueryFactory;
-
+    //2-8 QueryDSL
     @Override
     public Todo findByIdWithUser(Long id) {
         return jpaQueryFactory.selectFrom(todo)

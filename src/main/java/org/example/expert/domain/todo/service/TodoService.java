@@ -62,7 +62,7 @@ public class TodoService {
                 todo.getModifiedAt()
         ));
     }
-
+    //2-8 QueryDSL
     public TodoResponse getTodo(long todoId) {
         Todo todo = todoRepository.findByIdWithUser(todoId);
         if (todo == null){
