@@ -20,6 +20,7 @@ public class TodoController {
 
     private final TodoService todoService;
 
+    //1-1 Read-only
     @PostMapping("/todos")
     public ResponseEntity<TodoSaveResponse> saveTodo(
             @AuthenticationPrincipal AuthUser authUser,
