@@ -36,7 +36,7 @@ public class JwtUtil {
 
     public String createToken(Long userId, String email, UserRole userRole, String nickName) {
         Date date = new Date();
-
+        //1-2 nickName
         return BEARER_PREFIX +
                 Jwts.builder()
                         .setSubject(String.valueOf(userId))

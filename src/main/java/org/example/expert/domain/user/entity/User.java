@@ -13,6 +13,7 @@ import org.example.expert.domain.user.enums.UserRole;
 @Table(name = "users")
 public class User extends Timestamped {
 
+    //1-2 nickName
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
