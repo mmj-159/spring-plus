@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class AdminAccessLoggingAspect {
 
     private final HttpServletRequest request;
-
+    //1-5 AOP After -> Before
     @Before("execution(* org.example.expert.domain.user.controller.UserAdminController.changeUserRole(..))")
     public void logAfterChangeUserRole(JoinPoint joinPoint) {
         String userId = String.valueOf(request.getAttribute("userId"));
